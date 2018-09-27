@@ -14,11 +14,13 @@ class Category(models.Model):
 
 
 class Picture(models.Model):
-    #category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    picture_title = models.CharField(max_length=200)
-    #votes = models.IntegerField(default=0)
+    category = models.ForeignKey(Category, blank=True, null=True, on_delete=models.CASCADE)
+    position = models.IntegerField(default=0)
+    url = models.CharField(max_length=500)
+    title = models.CharField(max_length=200)
+    alt = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.picture_title
+        return self.title
 
 
