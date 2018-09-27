@@ -19,3 +19,9 @@ class IndexView(generic.ListView):
     model=Category
     template_name = 'gnmain/index.html'
     #context_object_name = 'latest_question_list'
+
+class DetailView(generic.DetailView):
+    model = Category
+    template_name = 'gnmain/category.html'
+
+

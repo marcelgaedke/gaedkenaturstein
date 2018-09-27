@@ -1,9 +1,16 @@
-{% if category_list %}
-    <ul>
-    {% for c in category_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ c.category_name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+{% extends 'gnmain/base.html' %}
+
+
+{% block title %}GAEDKE NATURSTEIN{% endblock %}
+
+{% block content %}
+    {% if category_list %}
+        <ul>
+        {% for c in category_list %}
+            <li><a href= {{ c.id }} />{{ c.category_name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+{% endblock %}
