@@ -1,4 +1,5 @@
 {% extends 'gnmain/base.html' %}
+{% load static %}
 
 {% block title %}{{ category.category_name }}{% endblock %}
 
@@ -8,7 +9,9 @@
 
     <ul>
     {% for p in category.picture_set.all %}
-        <li>{{ p.title }} -- {{ p.url }} vote{{ p.alt }}</li>
+        <li><img src="{% static p.url%}" /></li>
+
     {% endfor %}
+        <li><img class="header-img" src="{% static "gnmain/pictures/Treppen/treppe01.jpg" %}" /></li>
     </ul>
 {% endblock %}

@@ -9,8 +9,15 @@ html{
 
 }
 
+body{
+    background-color:#F5F5F5;
+    padding-top:25px;
+    font-family: 'Open Sans', sans-serif;
+    color: #484848;
+}
+
 header{
-    border:1px solid red;
+    //border:1px solid red;
     display:flex;
     flex-direction:row;
     justify-content:center;
@@ -18,12 +25,12 @@ header{
 }
 
 #div-logo{
-    border:1px solid black;
+    //border:1px solid black;
     width:500px;
 }
 
 nav{
-    border:1px solid black;
+    //border:1px solid black;
     width:500px;
 
 }
@@ -59,14 +66,21 @@ nav{
     margin:0px;
     display:flex;
     flex-direction:row;
-    justify-content:right;
-    align-items:bottom;
+    justify-content: right;
+    align-items:flex-end;
+
 }
 
 .navlink2{
+
+    height:35px;
+    line-height: 35px;
+    //border: 1px solid black;
     color:grey;
     text-decoration:none;
-    margin:10px;
+    align-self:bottom;
+    margin-right:10px;
+
 }
 
 .navlink2:hover{
@@ -75,7 +89,7 @@ nav{
 
 #header-images{
     width:1000px;
-    border: 1px solid black;
+    //border: 1px solid black;
     height:120px;
     margin: auto;
     display:flex;
@@ -87,32 +101,44 @@ nav{
 .header-img{
     display: none;
     height:100px;
-    border: 3px solid white;
+    border: 3px solid grey;
 
 
 }
 
+#top-title{
+
+    height:100px;
+    width:1000px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-bottom:1px solid black;
+    font-weight: 500;
+    font-size:35px;
+}
+
 main{
-    width:800px;
+    width:1000px;
     margin:auto;
-    background-color:blue;
+    background-color:grey;
+}
+
+h1{
+    //text-align:center;
+    font-weight:300;
 }
 
 
 @media only screen and (min-width: 768px) {     //CSS for large screens
       //CSS for big screens over 800px
 
-    li a {
-        color: green;
-    }
 
-    h1 {
-        color:yellow;
-    }
+
 main{
-      width:800px;
+      width:1000px;
       margin:auto;
-      background-color:blue;
+      background-color:grey;
       }
 
       .header-img{

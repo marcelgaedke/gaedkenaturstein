@@ -1,11 +1,13 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'gnmain/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>{% block title %}Gaedke Naturstein{% endblock %}</title>
 </head>
 <body>
@@ -31,13 +33,14 @@
                 <img class="header-img" src="{% static "gnmain/pictures/Header/image05.jpg" %}" />
                 <img class="header-img" src="{% static "gnmain/pictures/Header/image06.jpg" %}" />
             </div>
+            <div id="top-title">NATURSTEIN - GAEDKE - HAMBURG</div>
 
     </header>
     <main>
        {% block content %}CONTENT{% endblock %}
     </main>
     <footer></footer>
-    <div><h1>HEADER</h1>></div>
+
 
 
 </body>
