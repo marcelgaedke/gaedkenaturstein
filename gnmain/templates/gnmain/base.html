@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'gnmain/style.css' %}">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +9,36 @@
     <title>{% block title %}Gaedke Naturstein{% endblock %}</title>
 </head>
 <body>
-    <div>HEADER</div>
-    {% block content %}CONTENT{% endblock %}
+    <header>
+
+            <div id="div-logo"><img id="img-logo" src="{% static "gnmain/pictures/Logo.png" %}" /></div>
+
+            <nav><div id="div-mainnav">
+                {% for c in category_list %}
+                    <a class="navlink" href= {{ c.id }} />{{ c.category_name }}</a>
+                {% endfor %}</div>
+                <div id="div-nav2">
+                    <a class="navlink2" href="#">Kontakt</a>
+                    <a class="navlink2" href="#">Standort</a>
+                    <a class="navlink2" href="#">Impressum</a>
+                </div>
+            </nav>
+            <div id="header-images">
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image01.jpg" %}" />
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image02.jpg" %}" />
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image03.jpg" %}" />
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image04.jpg" %}" />
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image05.jpg" %}" />
+                <img class="header-img" src="{% static "gnmain/pictures/Header/image06.jpg" %}" />
+            </div>
+
+    </header>
+    <main>
+       {% block content %}CONTENT{% endblock %}
+    </main>
+    <footer></footer>
+    <div><h1>HEADER</h1>></div>
+
+
 </body>
 </html>

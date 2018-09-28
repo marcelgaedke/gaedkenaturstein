@@ -1,0 +1,127 @@
+                                                //Mobile first
+                                                //CSS for small screens
+
+
+
+
+
+html{
+
+}
+
+header{
+    border:1px solid red;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+#div-logo{
+    border:1px solid black;
+    width:500px;
+}
+
+nav{
+    border:1px solid black;
+    width:500px;
+
+}
+
+#div-mainnav{
+    //border: 1px solid black;
+    width:500px;
+    text-align:right;
+    height:50px;
+    line-height:50px;
+    margin:0px;
+}
+
+.navlink{
+    color:black;
+    text-decoration:none;
+    margin:15px;
+    //border: 1px solid black;
+}
+
+.navlink:hover{
+    text-decoration:underline;
+}
+
+#div-nav2{
+    width:500px;
+    font-size:15px;
+    font-style:italic;
+    //border: 1px solid black;
+    text-align:right;
+    height:70px;
+    line-height:70px;
+    margin:0px;
+    display:flex;
+    flex-direction:row;
+    justify-content:right;
+    align-items:bottom;
+}
+
+.navlink2{
+    color:grey;
+    text-decoration:none;
+    margin:10px;
+}
+
+.navlink2:hover{
+    //font-weight: 900;
+}
+
+#header-images{
+    width:1000px;
+    border: 1px solid black;
+    height:120px;
+    margin: auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.header-img{
+    display: none;
+    height:100px;
+    border: 3px solid white;
+
+
+}
+
+main{
+    width:800px;
+    margin:auto;
+    background-color:blue;
+}
+
+
+@media only screen and (min-width: 768px) {     //CSS for large screens
+      //CSS for big screens over 800px
+
+    li a {
+        color: green;
+    }
+
+    h1 {
+        color:yellow;
+    }
+main{
+      width:800px;
+      margin:auto;
+      background-color:blue;
+      }
+
+      .header-img{
+        display:inline;
+
+        }
+
+}
+
+
+
+

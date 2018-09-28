@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #'django.contrib.staticfiles',
     'gnmain.apps.GnmainConfig',
     'django.contrib.admin',
     'django.contrib.auth',
