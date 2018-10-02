@@ -121,13 +121,80 @@ nav{
 main{
     width:1000px;
     margin:auto;
-    background-color:grey;
+
 }
 
 h1{
-    //text-align:center;
+    text-align:center;
     font-weight:300;
 }
+
+#div-maintop{
+    //border: 1px solid black;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+#post1{
+    //border: 1px solid black;
+    width:300px;
+}
+
+#container1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:700px;
+}
+
+#cssSlider {
+    width: 500px;
+	height: 500px;
+	overflow: hidden;
+	//border: 10px solid #666;
+
+
+}
+
+#sliderImages {
+
+
+	width : 4000px;
+	height: 500px;
+	overflow: hidden;
+	animation: slide 16s infinite;
+
+}
+
+#sliderImages img {
+    display: inline-block;
+    width:500px;
+	float: left;
+}
+
+@keyframes slide{
+	0%{margin-left: 0px;}
+	30%{margin-left: 0px;}
+	33%{margin-left: -500px;}
+	63%{margin-left: -500px;}
+	66%{margin-left: -1000px;}
+	97%{margin-left: -1000px;}
+	100%{margin-left: 0px;}
+}
+
+
+#post2{
+    //border: 1px solid red;
+    width:650px;
+    height:200px;
+}
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 768px) {     //CSS for large screens

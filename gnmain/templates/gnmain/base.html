@@ -1,7 +1,8 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'gnmain/style.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'gnmain/gallery.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
 
             <nav><div id="div-mainnav">
                 {% for c in category_list %}
-                    <a class="navlink" href= {{ c.id }} />{{ c.category_name }}</a>
+                    <a class="navlink" href= /gnmain/{{ c.id }} />{{ c.category_name }}</a>
                 {% endfor %}</div>
                 <div id="div-nav2">
                     <a class="navlink2" href="#">Kontakt</a>
@@ -39,7 +40,10 @@
     <main>
        {% block content %}CONTENT{% endblock %}
     </main>
-    <footer></footer>
+    <hr>
+    <footer>
+        {% block footer %}FOOTER{% endblock %}
+    </footer>
 
 
 

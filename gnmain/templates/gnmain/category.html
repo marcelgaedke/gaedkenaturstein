@@ -5,13 +5,77 @@
 
 
 {% block content %}
-    <h1>{{ category.category_name }}</h1>
+    <h1>{{ category.category_html_name }}</h1>
+    <div id="div-maintop">
+        <div id="post1">
+            {% for p in category.post_set.all %}
+                {% if p.position  == 1 %}
+            <h2>{{p.title}}</h2>
+            <p>{{p.text}}</p>
+
+          {%endif%}
+
+            {% endfor %}
+
+        </div>
+        <div id="container1">
+            <div id="cssSlider">
+                <div id="sliderImages">
+                    {% for p in category.picture_set.all %}
+                        {% if p.position  == 0 %}
+                            <img src="{% static p.url%}" alt="" />
+
+                        {%endif%}
+
+                    {% endfor %}
+                    <div style="clear:left;"></div>
+                </div>
+            </div>
+            <div id="post2">
+                {% for p in category.post_set.all %}
+                    {% if p.position  == 2 %}
+                        <p>{{p.text}}</p>
+
+                    {%endif%}
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+    <h2>Picture Gallery</h2>
+    <div class="picture-gallery">
+    {% for p in category.picture_set.all %}
+        {% if p.position  == 0 %}
+
+                <div class="img-tile">
+                    <div class="img-div">
+                        <img class="gallery-img" src="{% static p.url%}" alt="">
+                    </div>
+                    <div class="img-description">description of picture</div>
+                </div>
+
+
+        {%endif%}
+    {% endfor %}
+    </div>
+
+    {% for i in img_list%}
+        <h3>{{ i }}</h3>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+{% block footer %}
 
     <ul>
     {% for p in category.picture_set.all %}
-        <li><img src="{% static p.url%}" /></li>
+        <li><img height=100px src="{% static p.url%}" /></li>
 
     {% endfor %}
-        <li><img class="header-img" src="{% static "gnmain/pictures/Treppen/treppe01.jpg" %}" /></li>
+        <li><img height=100px class="header-img" src="{% static "gnmain/pictures/Treppen/treppe01.jpg" %}" /></li>
     </ul>
 {% endblock %}

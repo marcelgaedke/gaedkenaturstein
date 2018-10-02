@@ -5,7 +5,9 @@ from . import views
 app_name = 'gnmain'
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^(?P<pk>[1])/$', views.IndexView.as_view(), name='index'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    #url(r'^(?P<url_name>[0-9a-zA-Z]+)/$', views.DetailView.as_view(), name='detail'),
 ]
 
 
