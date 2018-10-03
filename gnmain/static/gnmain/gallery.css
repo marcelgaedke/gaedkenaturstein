@@ -1,6 +1,7 @@
 .picture-gallery{
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     justify-content:space-between;
 }
 
@@ -8,13 +9,14 @@
 
     border: 3px solid #ccc;
     height:300px;
-    width:250px;
+    width:300px;
+    margin-bottom:20px;
 }
 
 .img-div{
     position:relative;
     height:250px;
-    width:244px;
+    width:294px;
     overflow:hidden;
 }
 
@@ -31,7 +33,7 @@
 
 .img-description{
     height:50px;
-    width:250px;
+    width:300px;
     display:table-cell;
     vertical-align:middle;
     text-align: center;
