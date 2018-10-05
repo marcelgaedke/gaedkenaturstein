@@ -1,0 +1,40 @@
+.picture-gallery{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+.img-tile{
+
+    border: 3px solid #ccc;
+    height:300px;
+    width:300px;
+    margin-bottom:20px;
+}
+
+.img-div{
+    position:relative;
+    height:250px;
+    width:294px;
+    overflow:hidden;
+}
+
+.gallery-img{
+    height:250px;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+
+
+.img-description{
+    height:50px;
+    width:300px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+}

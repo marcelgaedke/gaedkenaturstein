@@ -1,0 +1,220 @@
+                                                //Mobile first
+                                                //CSS for small screens
+
+
+
+
+
+html{
+
+}
+
+body{
+    background-color:#F5F5F5;
+    padding-top:25px;
+    font-family: 'Open Sans', sans-serif;
+    color: #484848;
+}
+
+header{
+    //border:1px solid red;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+#div-logo{
+    //border:1px solid black;
+    width:500px;
+}
+
+nav{
+    //border:1px solid black;
+    width:500px;
+
+}
+
+#div-mainnav{
+    //border: 1px solid black;
+    width:500px;
+    text-align:right;
+    height:50px;
+    line-height:50px;
+    margin:0px;
+}
+
+.navlink{
+    color:black;
+    text-decoration:none;
+    margin:15px;
+    //border: 1px solid black;
+}
+
+.navlink:hover{
+    text-decoration:underline;
+}
+
+#div-nav2{
+    width:500px;
+    font-size:15px;
+    font-style:italic;
+    //border: 1px solid black;
+    text-align:right;
+    height:70px;
+    line-height:70px;
+    margin:0px;
+    display:flex;
+    flex-direction:row;
+    justify-content: right;
+    align-items:flex-end;
+
+}
+
+.navlink2{
+
+    height:35px;
+    line-height: 35px;
+    //border: 1px solid black;
+    color:grey;
+    text-decoration:none;
+    align-self:bottom;
+    margin-right:10px;
+
+}
+
+.navlink2:hover{
+    //font-weight: 900;
+}
+
+#header-images{
+    width:1000px;
+    //border: 1px solid black;
+    height:120px;
+    margin: auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.header-img{
+    display: none;
+    height:100px;
+    border: 3px solid grey;
+
+
+}
+
+#top-title{
+
+    height:100px;
+    width:1000px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-bottom:1px solid black;
+    font-weight: 500;
+    font-size:35px;
+}
+
+main{
+    width:1000px;
+    margin:auto;
+
+}
+
+h1{
+    text-align:center;
+    font-weight:300;
+}
+
+#div-maintop{
+    //border: 1px solid black;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+#post1{
+    //border: 1px solid black;
+    width:300px;
+}
+
+#container1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:700px;
+}
+
+#cssSlider {
+    width: 500px;
+	height: 500px;
+	overflow: hidden;
+	//border: 10px solid #666;
+
+
+}
+
+#sliderImages {
+
+
+	width : 4000px;
+	height: 500px;
+	overflow: hidden;
+	animation: slide 16s infinite;
+
+}
+
+#sliderImages img {
+    display: inline-block;
+    width:500px;
+	float: left;
+}
+
+@keyframes slide{
+	0%{margin-left: 0px;}
+	30%{margin-left: 0px;}
+	33%{margin-left: -500px;}
+	63%{margin-left: -500px;}
+	66%{margin-left: -1000px;}
+	97%{margin-left: -1000px;}
+	100%{margin-left: 0px;}
+}
+
+
+#post2{
+    //border: 1px solid red;
+    width:650px;
+    height:200px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {     //CSS for large screens
+      //CSS for big screens over 800px
+
+
+
+main{
+      width:1000px;
+      margin:auto;
+      background-color:grey;
+      }
+
+      .header-img{
+        display:inline;
+
+        }
+
+}
+
+
+
+
