@@ -5,56 +5,58 @@
 
 
 {% block content %}
-    <h1>{{ category.category_html_name }}</h1>
-    <div id="div-maintop">
-        <div id="post1">
-            {% for p in category.post_set.all %}
-                {% if p.position  == 1 %}
-            <h2>{{p.title}}</h2>
-            <p>{{p.text}}</p>
+    <!-- Top Content -->
+        <div id="carousel_row text-center" class="row" >
+            <div class="col-lg-12 text-center">
+                <h1>{{ category.category_html_name }}</h1>
+            </div>
+        </div>
 
-          {%endif%}
+
+            <!-- Carousel -->
+          <div  class="col-lg-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+
+
+                {% for s in slider_img_list %}
+                    {% if s.index == 0%}
+                        <div class="carousel-item active">
+                    {% else %}
+                        <div class="carousel-item">
+                    {% endif %}
+                            <img class="d-block w-100" src="{% static s.filename %}" alt="slide {{ s.index }}">
+                    </div>
+                {% endfor %}
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+    <hr>
+
+        <article>
+
+            {% for p in category.post_set.all %}
+                {% if p.position  == 0 %}
+                    <h2>{{p.title}}</h2>
+                    <p>{{p.text}}</p>
+
+                {%endif%}
 
             {% endfor %}
+        </article>
 
-        </div>
-        <div id="container1">
-            <div id="cssSlider">
-                <div id="sliderImages">
-                    {% for p in category.picture_set.all %}
-                        {% if p.position  == 0 %}
-                            <img src="{% static p.url%}" alt="" />
+    <hr>
 
-                        {%endif%}
-
-                    {% endfor %}
-                    <div style="clear:left;"></div>
-                </div>
-            </div>
-            <div id="post2">
-                {% for p in category.post_set.all %}
-                    {% if p.position  == 2 %}
-                        <p>{{p.text}}</p>
-
-                    {%endif%}
-
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    <hr/>
-    <h2>Picture Gallery</h2>
-    <div class="picture-gallery">
-        {% for p in img_list %}
-            <div class="img-tile">
-                <div class="img-div">
-                    <img class="gallery-img" src="{% static p.filename %}" alt="">
-                </div>
-                <div class="img-description">{{ p.description }}</div>
-            </div>
-        {% endfor %}
-    </div>
 
 
 
@@ -62,7 +64,4 @@
 
 
 
-{% block footer %}
 
-
-{% endblock %}
