@@ -42,7 +42,7 @@ class IndexView(generic.ListView):
 
         context['slider_img_list'] = slider_img_list
 
-        cat = {'name': "Home", 'id':1}
+        cat = {'category_name': "Home", 'category_html_name':"Home",'id':1}
         context['cat'] = cat
         context['category'] =cat
 
@@ -99,4 +99,8 @@ class DetailView(generic.DetailView):
 
         return context
 
+
+class ImpressumView(generic.ListView):
+    model = Category
+    template_name = 'App/impressum.html'
 
