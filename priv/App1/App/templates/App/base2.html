@@ -1,0 +1,76 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'App/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'App/gallery.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Gaedke Naturstein{% endblock %}</title>
+</head>
+<body>
+    <header>
+
+            <div id="div-logo"><img id="img-logo" src="{% static "App/pictures/Logo.png" %}" /></div>
+
+            <nav><div id="div-mainnav">
+                {% for c in category_list %}
+                    <a class="navlink" href= /{{ c.id }} />{{ c.category_name }}</a>
+                {% endfor %}</div>
+                <div id="div-nav2">
+                    <a class="navlink2" href="#">Kontakt</a>
+                    <a class="navlink2" href="#">Standort</a>
+                    <a class="navlink2" href="#">Impressum</a>
+                </div>
+            </nav>
+            <div id="header-images">
+                <img class="header-img" src="{% static "App/pictures/Header/image01.jpg" %}" />
+                <img class="header-img" src="{% static "App/pictures/Header/image02.jpg" %}" />
+                <img class="header-img" src="{% static "App/pictures/Header/image03.jpg" %}" />
+                <img class="header-img" src="{% static "App/pictures/Header/image04.jpg" %}" />
+                <img class="header-img" src="{% static "App/pictures/Header/image05.jpg" %}" />
+                <img class="header-img" src="{% static "App/pictures/Header/image06.jpg" %}" />
+            </div>
+            <div id="top-title">NATURSTEIN - GAEDKE - HAMBURG</div>
+
+    </header>
+    <main>
+      {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footer-title">GRANIT   MARMOR   SANDSTEIN</div>
+      <hr>
+
+    <div class="footer-title">NATURSTEIN - GAEDKE - HAMBURG</div>
+
+    <div id="footer-div">
+        <div id="footer_left">
+            <p>
+            Öffnungszeiten:<br>
+            Mo. - Fr.  8-16 Uhr<br>
+            Sa. nach Absprache<br>
+            </p>
+        </div>
+        <div id=footer_right">
+            <h3>IHR STEINMETZBETRIEB IN HAMBURG</h3>
+
+<p>Kostenlose und unverbindliche Beratung bei Ihnen vor Ort
+    rufen Sie uns einfach an und vereinbaren einen Termin</p>
+
+Gaedke Naturstein GmbH<br>
+Poppenbütteler Ch. 81, 22397 Hamburg<br>
+E-Mail: info@gaedke-naturstein.de, <br>
+            Tel. (040) 607 66 00
+
+        </div>
+    </div>
+    </footer>
+
+
+
+</body>
+</html>

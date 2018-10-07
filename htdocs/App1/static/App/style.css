@@ -190,8 +190,32 @@ h1{
     height:200px;
 }
 
+footer{
+    margin:auto;
+    width:1000px;
+    padding-bottom:50px;
+}
 
+.footer-title{
+    height:100px;
+    width:100%;
+    text-align:center;
+    font-weight: 500;
+    font-size:35px;
+}
+#footer-div{
+    display:flex;
+    flex-direction:row;
+}
+#footer_left{
+    width:40%;
 
+}
+
+#footer_right{
+    width:60%;
+
+}
 
 
 

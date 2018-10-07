@@ -1,0 +1,78 @@
+{% extends 'App/base.html' %}
+{% load static %}
+
+{% block title %}GAEDKE NATURSTEIN{% endblock %}
+
+{% block content %}
+{{ cat }}
+<h1>{{ category.category_html_name }} {{ cat }}</h1>
+    <div id="div-maintop">
+        <div id="post1">
+            {% if category_list %}
+                {% for c in category_list %}
+					 {% if c.id  == 1 %}
+                        {% for p in c.post_set.all %}
+                            {% if p.position  == 1 %}
+								
+                                <h2>{{p.title}}</h2>
+                                <p>{{p.text}}</p>
+
+                            {%endif%}
+
+                        {% endfor %}
+					{%endif%}
+                {% endfor %}
+            {%endif%}
+
+        </div>
+        <div id="container1">
+            <div id="cssSlider">
+                <div id="sliderImages">
+                    {% for s in slider_img_list %}
+                        <img src="{% static s.filename%}" alt="" />
+                    {% endfor %}
+                    <div style="clear:left;"></div>
+                </div>
+            </div>
+            <div id="post2">
+                {% if category_list %}
+                    {% for c in category_list %}
+                         {% if c.id  == 1 %}
+                            {% for p in c.post_set.all %}
+                                {% if p.position  == 2 %}
+
+                                    <p>{{p.text}}</p>
+
+                                {%endif%}
+
+                            {% endfor %}
+                        {%endif%}
+                    {% endfor %}
+                {%endif%}
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <h2>Bildergalerie:</h2>
+    <div class="picture-gallery">
+        {% if category_list %}
+            {% for c in category_list %}
+                {% for p in c.picture_set.all %}
+                    {% if p.position  == 0 %}
+                        <div class="img-tile">
+                            <div class="img-div">
+                                <img class="gallery-img" src="{% static p.url %}" alt="">
+                            </div>
+                            <div class="img-description">{{ c.category_name }}</div>
+                        </div>
+                        <p>{{p.text}}</p>
+                    {%endif%}
+                {% endfor %}
+            {% endfor %}
+        {%endif%}
+    </div>
+
+
+{% endblock %}
