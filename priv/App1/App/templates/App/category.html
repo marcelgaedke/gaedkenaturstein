@@ -60,6 +60,35 @@
 
 
 
+<!-- Bildergalerie -->
+
+    <div class="container gallery-container">
+
+        <h1>Bildergalerie</h1>
+
+        <p class="page-description text-center">{{ category.category_html_name }}</p>
+
+        <div class="tz-gallery">
+
+            <div class="row">
+                {% for i in img_list %}
+                <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="{% static i.filename %}">
+                        <img src="{% static i.filename %}" alt="{% static i.description %}">
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr>
+
+
+
+
 {% endblock %}
 
 

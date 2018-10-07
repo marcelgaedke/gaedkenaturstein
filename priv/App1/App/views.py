@@ -44,6 +44,7 @@ class IndexView(generic.ListView):
 
         cat = {'name': "Home", 'id':1}
         context['cat'] = cat
+        context['category'] =cat
 
         return context
 

@@ -20,6 +20,11 @@
     <!-- Custom styles for this template -->
       <link href="{% static 'App/style_main.css' %}" rel="stylesheet">
 
+      <!-- links for photo gallery -->
+      <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'App/gallery-grid.css' %}">
+
   </head>
 
   <body>
@@ -27,30 +32,23 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Gaedke Naturstein</a>
+        <a class="navbar-brand" href="/1">Gaedke Naturstein</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menü<span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+
+
               {% for c in category_list %}
-              <li class="nav-item">
-                  <a class="nav-link" href= /{{ c.id }} />{{ c.category_name }}</a>
-              </li>
+                {% if category.id == c.id %}
+                    <li class="nav-item active">
+                {% else %}
+                     <li class="nav-item">
+                {% endif %}
+
+                        <a class="nav-link" href= /{{ c.id }} />{{ c.category_name }}</a>
+                    </li>
               {% endfor %}
 
           </ul>
@@ -110,21 +108,14 @@
               </div>
             </div>
         </div>
-        <!-- Button
-        <hr>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a href="#" class="btn btn-primary btn-lg">Zur Bildergalerie</a>
-                </div>
-            </div>-->
 
-        <!-- Nav Buttons -->
+        <!-- Nav Buttons Group -->
         <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="btn-group d-flex" role="group">
                         {% for c in category_list %}
-                          <a href="{{ c.id }}" class="btn btn-secondary w-100 btn-lg">{{ c.category_name }}</a>
+                          <a href="/{{ c.id }}" class="btn btn-secondary w-100 btn-lg">{{ c.category_name }}</a>
                         {% endfor %}
                     </div>
                 </div>
@@ -201,6 +192,11 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{% static 'App/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'App/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
 
 
 
