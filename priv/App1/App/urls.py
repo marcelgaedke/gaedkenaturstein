@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('1/', views.IndexView.as_view(), name='index'),
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    #path('<string:category_name>/', views.DetailView.as_view(), name='detail'),
     path('impressum/', views.ImpressumView.as_view(), name='impressum'),
 ]

@@ -6,6 +6,7 @@ def index(request):
     return HttpResponse("GN Main")
 
 '''
+#from django.contrib.auth.models import User, Group
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -15,6 +16,12 @@ import os
 from django.conf import settings
 
 from .models import Category, Picture, Post
+
+#For REST API
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import CategorySerializer
 
 
 class IndexView(generic.ListView):
@@ -103,4 +110,14 @@ class DetailView(generic.DetailView):
 class ImpressumView(generic.ListView):
     model = Category
     template_name = 'App/impressum.html'
+
+
+################REST APIs
+
+class CategoryList(APIView):
+
+    def get(self,request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
 

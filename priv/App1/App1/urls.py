@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
+from App import views
 
 
 urlpatterns = [
@@ -22,4 +24,7 @@ urlpatterns = [
     #path('app/', include('App.urls')),
     path('', include('App.urls')),
     #path('2', include('App.urls')),
+    path('categories/', views.CategoryList.as_view()),
 ] 
+
+urlpatterns = format_suffix_patterns(urlpatterns);
