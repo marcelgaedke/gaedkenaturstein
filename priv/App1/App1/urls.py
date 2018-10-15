@@ -21,7 +21,7 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('app/', include('App.urls')),
+    ##path('app/', include('App.urls')),
     path('', include('App.urls')),
     #path('2', include('App.urls')),
     path('categories/', views.CategoryList.as_view()),
