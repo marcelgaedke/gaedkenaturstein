@@ -9,3 +9,10 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class PostSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Post
+        fields = ('id','category','position','title')
+        #fields = '__all__'
+

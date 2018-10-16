@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from App import views
+from .api import router
+
 
 
 urlpatterns = [
@@ -24,7 +26,12 @@ urlpatterns = [
     ##path('app/', include('App.urls')),
     path('', include('App.urls')),
     #path('2', include('App.urls')),
-    path('categories/', views.CategoryList.as_view()),
+    #path('categories/', views.CategoryList.as_view()),
+    #path('posts/', views.PostList.as_view())
+    path('api/v1/', include(router.urls)),
 ] 
 
-urlpatterns = format_suffix_patterns(urlpatterns);
+#urlpatterns = format_suffix_patterns(urlpatterns);
+
+
+

@@ -21,8 +21,9 @@ from .models import Category, Picture, Post
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import CategorySerializer
-
+from rest_framework import viewsets
+#from .serializers import CategorySerializer
+from App.serializers import *
 
 class IndexView(generic.ListView):
     model=Category
@@ -114,10 +115,44 @@ class ImpressumView(generic.ListView):
 
 ################REST APIs
 
-class CategoryList(APIView):
+'''class CategoryList(APIView):
 
     def get(self,request):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)
+
+
+class PostList(APIView):
+
+    def get(self,request):
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts,many=True)
+        return Response(serializer.data)
+
+'''
+
+class CategoryViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for listing or retrieving users.
+    """
+    def list(self, request):
+        queryset = Category.objects.all()
+        serializer = CategorySerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def retrieve(self, request, pk=None):
+        queryset = Category.objects.all()
+        category = get_object_or_404(queryset, pk=pk)
+        serializer = CategorySerializer(category)
+        return Response(serializer.data)
+
+class PostViewSet(viewsets.ModelViewSet):
+
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def destroy(self, request, pk=None):    #overwrite the delete method
+        pass
+
 
