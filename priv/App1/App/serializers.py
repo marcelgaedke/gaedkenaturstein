@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Picture, Post
+from .models import Category, Picture, Post, Employee
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -15,4 +15,10 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id','category','position','title')
         #fields = '__all__'
+
+class EmployeeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Employee
+        fields = '__all__'
 

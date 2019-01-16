@@ -81,12 +81,23 @@ WSGI_APPLICATION = 'App1.wsgi.application'
 
 
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'grabmalehamburg_local',
+        'USER': 'user1',
+        'PASSWORD': 'pass1234',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}'''
 
 
 # Password validation
@@ -129,12 +140,14 @@ USE_TZ = True
 #STATIC_ROOT ='/var/www/ssd1400/htdocs/App1/static'
 STATIC_URL = '/static/'
 
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/home/kidneybean/PycharmProjects/gaedkenaturstein/gnmain/static/gnmain',
-    '/home/kidneybean/PycharmProjects/gaedkenaturstein/gnmain/static',
-    '/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1',
-    '/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static',
-    '/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static/App',
-    '/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static/App/pictures',
+    #'/home/kidneybean/PycharmProjects/gaedkenaturstein/gnmain/static/gnmain',
+    #'/home/kidneybean/PycharmProjects/gaedkenaturstein/gnmain/static',
+    #'/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1',
+    #'/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static',
+    #'/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static/App',
+    #'/home/kidneybean/Downloads/grabmalehamburg_3_10_18/htdocs/App1/static/App/pictures',
+    '/home/kidneybean/grabmalehamburg/website/grabmalehamburg_14_1_2019/gaedkenaturstein/htdocs/App1/static'
 ]

@@ -18,11 +18,10 @@ from django.conf import settings
 from .models import Category, Picture, Post
 
 #For REST API
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+#from rest_framework.views import APIView
+#from rest_framework.response import Response
+#from rest_framework import status
 from rest_framework import viewsets
-#from .serializers import CategorySerializer
 from App.serializers import *
 
 class IndexView(generic.ListView):
@@ -36,6 +35,7 @@ class IndexView(generic.ListView):
             path = os.path.join(settings.STATIC_ROOT, path2)
         else:
             path = os.path.join(settings.MEDIA_ROOT, path2)
+            #path = os.path.join(settings.STATIC_ROOT, path2)
         path_slider = "slider/"
         sliderfilelist = os.listdir(path + path_slider)  # Get Gallery Pictures
         slider_img_list = []
@@ -78,12 +78,14 @@ class DetailView(generic.DetailView):
             path = os.path.join(settings.STATIC_ROOT, path2)
         else:
             path = os.path.join(settings.MEDIA_ROOT, path2)
+            #path = os.path.join(settings.STATIC_ROOT, path2)
         filelist = os.listdir(path)                                 #Get Gallery Pictures
         img_list=[]
         for f in filelist:
             if "." in f:
                 i = f.index(".")
                 file ={'filename':(path2+f),'description':f[:i]}
+                print(f)
                 img_list.append(file)
 
         context['category_list'] = Category.objects.all()
@@ -114,6 +116,11 @@ class ImpressumView(generic.ListView):
 
 
 ################REST APIs
+
+class EmployeeViewSet(viewsets.ModelViewSet):
+
+    queryset = Employee.objects.all()
+    serializer_class =EmployeeSerializer
 
 '''class CategoryList(APIView):
 
